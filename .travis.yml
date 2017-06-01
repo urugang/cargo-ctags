@@ -1,0 +1,18 @@
+language: rust
+rust:
+- nightly
+script:
+- cargo build --verbose --all
+- cargo test  --verbose --all
+- tar cjf release.tar.bz2 target
+deploy:
+  provider: releases
+  api_key:
+    secure: D2GncTLd296Kto5jUGhI2b039WMcDYAn59ywYcfDefc/5k9Z4LMR81hgnY8CFKL0psvrrc8IUKZ9CiCY8sJPO5xHPQmqGxhrxmfK6QIN84FgTLvYwdWeRA8tFjn+a1wJv/2bk732A+21cPNX9AQ9P4pJzMq+UYsLx1KiwtHEakPcU3QNosTIC4Mc+n3gKrLO2YanzelQzyu+Z+/JZv1COGQCxMrmXA9PG4NCZysI1twH4T9xJk95449hLP+ArObgp63hae1K93YK0RwNTkPLEMxc3i0u4M+JvYB0BZTDdtRozlc/9USdxkytnT0s07gmPlNKistGYuQDNC/Y1TYTLhFJNYh55ZJGU1TNY4Fov3LHIucVXOq1FLhwmZYgFbZ4kePe/X1OM6vHHzKXl4XAzsbOzEJqr/Qs2NDaeGXfplYe0Ht7Oh8Q57kZ6lFnYuyamKgVGqGVsUGtlcodtDCZqFkLm35UUURCS7LxSNmewoP3jGjm+Rq02Q8wZsEaslVtCw/R149TQa3bcZ281P8/pDKedx2MIiRHcddqu/88nOI1pXGKWSJECf2os+xMna2FZHr13fsz/gmTnjBgBVw6ODiA2GI18c4Ovgm7nLXcHBJ8BedDpDRznGFVYPTpeEvPuc5Q0mXdA0q0BPGjIDx3FpoW6ySea4bl8rHmbPDAhTc=
+  file: "release.tar.bz2"
+  overwrite: true
+  skip_cleanup: true
+  on:
+    repo: urugang/cargo-ctags
+    tags: true    
+    all_branches: true
