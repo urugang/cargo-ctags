@@ -7,21 +7,19 @@ install ctags from <https://github.com/universal-ctags/ctags.git>
 ## cargo-ctags
 usage: cargo ctags [cargo metadata arguments] -- [ctags arguments]   
 
-`
+```
 ~/codes/cargo-ctags $ cargo install cargo-ctags  
-`
 
-`
-~/codes/cargo-ctags $ cargo ctags -- -e # TAGS for emacs   
+~/codes/cargo-ctags $ cargo ctags -- -e  # -e for emacs  
 ~/codes/cargo-ctags $ ls -l TAGS  
--rw-rw-r--   1 urugang        urugang   1415698 2017-05-31 08:13 TAGSc  
-`
+-rw-rw-r--   1 urugang        urugang   1415698 2017-05-31 08:13 TAGS  
+```
 
-`
-~/codes/cargo-ctags $ cargo ctags -- # TAGS for vi   
+```
+~/codes/cargo-ctags $ cargo ctags # default for vi   
 ~/codes/cargo-ctags $ ls -l tags  
 -rw-rw-r--   1 urugang        urugang   1415698 2017-05-31 08:14 tagsc  
-`
+```
 
 ## License
 
